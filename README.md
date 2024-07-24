@@ -1,44 +1,48 @@
 # TALLER-GRUPAL-PRG
 --CONSTRUCTORES--
-TALLER GRUPAL
-ste código desarrolla una aplicación de escritorio en Java que permite a los usuarios visualizar datos sobre los constructores de Fórmula 1 en un año específico, utilizando una interfaz gráfica de usuario (GUI). La información se obtiene de una base de datos PostgreSQL y se muestra en una tabla interactiva.
-Descripción General del Código
-1.	Conexión a la Base de Datos:
-o	El código establece una conexión con una base de datos PostgreSQL específica (Formula1) usando DriverManager.getConnection.
-2.	Interfaz Gráfica de Usuario (GUI):
-o	Se crea una ventana (JFrame) titulada "Tabla de Constructores por Año".
-o	En la parte superior de la ventana, se coloca un menú desplegable (JComboBox) que permite seleccionar un año.
-o	En el centro de la ventana, se muestra una tabla (JTable) que contiene datos sobre los constructores de Fórmula 1.
-3.	Poblar el Menú Desplegable:
-o	El menú desplegable se llena con los años disponibles obtenidos de la base de datos mediante una consulta SQL.
-4.	Actualización de la Tabla:
-o	Al seleccionar un año en el menú desplegable, se ejecuta una tarea en segundo plano (utilizando SwingWorker) para consultar la base de datos y obtener información sobre los constructores de ese año.
-o	Los datos obtenidos incluyen el nombre del constructor, el número de victorias, los puntos totales y el ranking.
-o	Estos datos se utilizan para actualizar el modelo de la tabla, lo que a su vez actualiza la visualización en la interfaz gráfica.
-Detalles de Implementación
-•	connectDB(): Método para establecer la conexión con la base de datos PostgreSQL.
-•	createGUI(): Método que configura y muestra la interfaz gráfica inicial.
-•	populateComboBox(): Método que llena el JComboBox con los años disponibles desde la base de datos.
-•	updateTableInBackground(): Método que realiza una consulta en segundo plano para actualizar los datos de la JTable basándose en el año seleccionado.
-Componentes de la GUI
-1.	JFrame: La ventana principal de la aplicación.
-2.	JComboBox: Menú desplegable que permite seleccionar un año.
-3.	JTable: Tabla que muestra la información de los constructores.
-4.	DefaultTableModel: Modelo de datos para la tabla.
-5.	JScrollPane: Contenedor que permite desplazarse por la tabla.
-Flujo de Trabajo
-1.	Inicio de la Aplicación:
-o	La aplicación se inicia mediante el método main, que llama a SwingUtilities.invokeLater para asegurar que la creación de la GUI se realice en el hilo de eventos de Swing.
-2.	Selección del Año:
-o	Al seleccionar un año en el JComboBox, se desencadena un evento que llama a updateTableInBackground.
-3.	Consulta y Actualización:
-o	updateTableInBackground ejecuta una consulta SQL en segundo plano para obtener datos de constructores.
-o	Los datos obtenidos se procesan y se actualiza el DefaultTableModel de la JTable, refrescando la vista en la GUI.
-Propósito
-El propósito de este código es proporcionar una herramienta visual e interactiva para consultar y visualizar datos históricos sobre los constructores de Fórmula 1, permitiendo al usuario seleccionar diferentes años y ver los datos correspondientes de manera rápida y sencilla.
 
-![image](https://github.com/ANA-ZAMBRANO/TALLER-GRUPAL-PRG/assets/169195758/ebc738b7-a8ca-4190-bec6-bc79c952c297)
-![image](https://github.com/ANA-ZAMBRANO/TALLER-GRUPAL-PRG/assets/169195758/d31441ba-0679-4cec-b446-3c8c1f88153a)
+Descripción de la Aplicación
+El código crea una interfaz gráfica de usuario (GUI) en JavaFX para visualizar datos relacionados con la Fórmula 1. La aplicación permite al usuario seleccionar y ver diferentes tipos de información y gráficos relacionados con los resultados de las carreras.
 
+Qué hace y muestra la aplicación
+Título de la Ventana:
 
+La ventana principal de la aplicación se titula "FORMULA #1".
+Etiquetas y Botones en la Interfaz Principal:
 
+Etiqueta de Título: Muestra "RESULTADOS DE LA FORMULA #1" en una fuente grande y en negrita.
+Etiqueta de Instrucción: Proporciona la instrucción "SELECCIONE EL DATO QUE DESEA VISUALIZAR".
+Botones:
+"CONSULTAR RESULTADOS DE LOS DRIVERS": Abre una nueva ventana para consultar los resultados de los conductores.
+"CONSULTAR RESULTADOS DE LOS CONSTRUCTORS": Abre una nueva ventana para consultar los resultados de los constructores.
+"CONSULTAR GRAFICO DE BARRAS DE LOS DRIVERS": Abre una nueva ventana que muestra un gráfico de barras con los resultados de los conductores.
+"CONSULTAR GRAFICO DE BARRAS DE LOS CONSTRUCTORS": Abre una nueva ventana que muestra un gráfico de barras con los resultados de los constructores.
+Diseño y Estilo:
+
+Los botones están diseñados con colores distintos para facilitar la diferenciación visual:
+Verde para los resultados de los conductores.
+Azul para los resultados de los constructores.
+Amarillo para el gráfico de los conductores.
+Naranja para el gráfico de los constructores.
+La disposición de los elementos es vertical (VBox), con un espacio de 20 píxeles entre ellos y un margen de 50 píxeles alrededor.
+El fondo de la ventana principal es de color azul claro (LIGHTBLUE).
+Acciones de los Botones:
+
+Al hacer clic en cualquiera de los botones, se abre una nueva ventana específica para la acción seleccionada:
+openConductoresWindow(): Abre una ventana para consultar los resultados de los conductores utilizando VentanaConductores.
+openConstructoresWindow(): Abre una ventana para consultar los resultados de los constructores utilizando VentanaConstructores.
+openGraficoConductoresWindow(): Abre una ventana que muestra un gráfico de barras con los resultados de los conductores utilizando GraficoConductores.
+openGraficoConstructoresWindow(): Abre una ventana que muestra un gráfico de barras con los resultados de los constructores utilizando GraficoConstructores.
+En resumen:
+La aplicación presenta una interfaz gráfica que permite al usuario:
+
+Consultar los resultados de los conductores y constructores de Fórmula 1.
+Ver gráficos de barras que ilustran los resultados de los conductores y constructores.
+Cada opción de consulta o visualización abre
+
+![82dd8e99-ea4e-4ebb-ab3b-19f9d58c539c](https://github.com/user-attachments/assets/11328517-e753-478f-ae97-488547662bf9)
+
+![06c6dfbc-6e2e-4219-8a69-6231801284d5](https://github.com/user-attachments/assets/79022ef7-a3a2-4261-a776-9515fe37afcb)
+![ee71b5be-0b15-43af-920c-a0de0f3be7ea](https://github.com/user-attachments/assets/c94f6527-5c25-4484-b296-39b48a61fb2a)
+![41512f49-c32b-4ee2-aca4-1b2aa35be2de](https://github.com/user-attachments/assets/34a1c226-5a8d-4fec-9342-f35b0cde09c9)
+![d113d6f0-cce3-42ac-b7fe-d4fe6d87afe1](https://github.com/user-attachments/assets/e0dd1dc2-029f-49b7-8cd7-791d808c0d6a)
