@@ -1,6 +1,7 @@
 # TALLER-GRUPAL-PRG
 --CONSTRUCTORES--
-
+https://drive.google.com/drive/folders/1sNNCMC45Hr6k4WR09igfJWi1ZosH05T0?usp=sharing
+video
 Descripción de la Aplicación
 El código crea una interfaz gráfica de usuario (GUI) en JavaFX para visualizar datos relacionados con la Fórmula 1. La aplicación permite al usuario seleccionar y ver diferentes tipos de información y gráficos relacionados con los resultados de las carreras.
 
